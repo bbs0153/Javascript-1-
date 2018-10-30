@@ -72,6 +72,75 @@ let currentTemp = 19.5;
 const mesaage = "The current temperature is ${currentTemp}\u00b0C"; // 문자열 템플릿 사용
 
 
+const multiline = `line1
+line2` // 베틱을 사용한 문자열
+
+const result1 = 3 + "30"; // 3이 문자열로 바뀐다 결과는 문자열 '330' 이다
+const result2 = 3 * "30"; // '30'이 숫자로 바뀐다. 결과는 숫자 90이다
+
+// 불리언
+let heating = true;
+let colling = false;
+
+
+// 심볼
+const RED = Symbol("The color of a sunest!");
+const ORANGE = Symbol("The color of a sunset!");
+RED === ORANGE // false : 심볼은 모두 서로 다르다
+
+// unll과 undifined
+let currentTemp; // 암시적으로 undifined이다
+const targetTempC = null; // 대상 온도는 null 아직 모르는 값이다
+currentTemp = 19.5; // currentTemp에는 이제 값이 있다
+currentTemp = undifined; // currentTemp는 초기화되지 않은 듯하다 (권장하지 않는다)
+
+// 객체
+const obj = {};
+obj.color = "yellow";
+
+obj["not an idntifier"] = 3;
+obj["not an idntifier"]; // 3
+obj["color"] ; // "yellow"
+
+const SIZE = Symbol();
+obj[SIZE] = 8;
+obj[SIZE]; // 8
+
+const sam1 = {
+	name : "Sam",
+	age : 4,
+}
+
+const sam2 = {name:"Sam", age:4}; // 한 줄로 선언
+
+const sam3 = {
+	name : "Sam",
+	classification : {
+		kingdom : "Anamalia",
+		phylum : "Chordata",
+		class : "Mamalia",
+		order : "Carnivoria",
+		family : "Felidae",
+		subfamily : "Felinae",
+		genus : "Felis",
+		species : "catus",
+	},
+}
+// 세가지 객체를 만듬 sam1 과 sam2 프로퍼티는 똑같지만 둘은 서로 다른 객체이다.
+
+sam3.classification.family; // "Felidae"
+sam3["classification"].family; // "Felidae"
+sam3.classification["family"]; // "Felidae"
+sam3["classification"]["family"]; // "Felidae"
+// 객체에 함수를 담을 수도 있다 
+
+sam3.speak = function() { return "Meow!";}; // sam3 함수를 추가
+sam3.speak(); // "Meow!"
+
+delete sam3.classification; // classification 트리 전체가 삭제되었다
+delete sam3.speak // speak 함수가 작제 되었다
+
+
 
 
 
