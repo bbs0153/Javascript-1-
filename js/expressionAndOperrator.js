@@ -80,6 +80,34 @@ while(true){
 }
 console.log(`Stopped at ${n}`);
 
+3 + 5 + "8" // 문자열 "88"이 된다
+"3" + 5 + 8 // 문자열 "358"이 된다
 
+// 논리 연산자
+undifined
+null
+false
+0
+NaN
+" " // 자바스크립트에서 거짓 같은 값
+
+// 모든객체 vlaueOf() 메서드를 호출 했을 때 false를 반환한는 객체도 참 같은 값에 속한다
+// 배열, 빈 배열도 참 같은 값에 속한다
+// 공백만 있은 문저열 (" " 등)
+// 문자열 "false"
+
+// and(&&), or(||), not(!)
+
+// 단축 평가
+const skipIt = true;
+let x = 0;
+const result = skiptIt || x++;
+// 세 번째 행의 결과는 result에 저장된다 첫 번째 피연산자가 skipIt이 true이므로 result도 true이다
+// 세 번째 행에서 단축 평가가 일어나므로 증가 연산자에 해당하는 표현식은 실행되지 않고 x의 값은 그대로 0이다
+// skiptIt를 false로 바꾸면 x는 증가한다
+const doIt = false;
+let x = 0;
+const result = doIt && x++;
+// result는 flase이고 x는 늘어나지 않는다 doIt를 true로 바꾸면 증가 연산이 일어나고 result가 0이 된다
 
 
