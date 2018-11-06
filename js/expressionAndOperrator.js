@@ -110,4 +110,60 @@ let x = 0;
 const result = doIt && x++;
 // result는 flase이고 x는 늘어나지 않는다 doIt를 true로 바꾸면 증가 연산이 일어나고 result가 0이 된다
 
+// 조건 연산자
+const doIt = false;
+const result = doIt ? "Did it!" : "Didn't do it"; // 3항 연산자
+// 표현식의 값은 두 번째 피연산자이며, 거짓 같은 값이면 셋 번째 피연산자 이다
+
+// 쉼표 연산자
+let x =0, y = 10, z;
+z = (x++,y++);
+// y와 x 모두 1씩 늘어나지만 z의 값은 10  y++가 반환하는 값이다
+
+// 해체 할당
+const obj = {b:2,c:3,d:4}; // 객체 선언
+const {a,b,c} = obj; // 해체 할당
+a; // undifined : obj에는 "a"프로퍼티가 없다
+b; // 2
+c; // 3
+d; // ReferenceError: "d"는 정의되자 않았다
+
+const obj = {b:2,c:3,d:4};
+let a,b,c;
+{a,b,c} = obj; // 에러 발생
+({a,b,c}=obj); // 동작함
+
+const arr = [1,2,3]; // 배열 선언
+let [x,y] = arr;
+x; // 1
+y; // 2
+z; // ReferenceError: "z"는 정의 되지 않았다
+
+const arr = [1,2,3,4,5];
+let [x,y,...rest] = arr;
+x; // 1
+y; // 2
+rest; // [3,4,5]
+
+let a = 5, b = 10;
+[a,b] = [b,a];
+a; // 10
+b; // 5
+
+// if...else 문을 3항 연산자로 바꾸기
+if(isPrime(n)){
+	label = "prime";
+}else{
+	label = "non-prime";
+}
+
+label = isPrime(n) : "prime" : "non-prime";
+
+// if문을 단축 평가하는 OR 표현식으로 바꾸기
+if(!options) options = {};
+options = options || {};
+
+
+
+
 
